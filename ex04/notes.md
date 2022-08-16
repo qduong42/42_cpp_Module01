@@ -29,9 +29,16 @@
 ### **inherited from std::ios_base: **
 - seekdir **beg** **end** **cur**
 
+### ifstream::rdbuf 
+- Returns pointer to internal filebuf object
+- seems like it can not be copied externally to a string, but can be printed.
+
 ## std::string notes cppreference:
 
-- 
+- std::string string = mem where mem is a char* to a string is valid.
+- erase
+- insert
+- .find -> return npos if string not found.
 
 * Binary vs text line 6 https://stackoverflow.com/questions/20863959/difference-between-opening-a-file-in-binary-vs-text
 * text mode = newline translations \n -> newline
