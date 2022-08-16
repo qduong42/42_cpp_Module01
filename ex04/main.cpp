@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		const std::string replace = argv[3];
 		std::ifstream infile(argv[1], std::ios_base::ate);
 		std::ofstream outfile(filename.c_str());
-		// changed structure to compile for linux.
+		// changed structure to compile for linux. linux compilation requires .c_str()
 		// outfile.open(filename.c_str()); 
 		// infile.open(argv[1], std::ios_base::ate);
 		if (infile.fail())
