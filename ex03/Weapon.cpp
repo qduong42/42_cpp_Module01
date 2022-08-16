@@ -2,25 +2,24 @@
 
 //	CONSTRUCTORS | DESTRUCTOR
 
-Weapon::Weapon():_type("")
-{return ;}
+Weapon::Weapon(std::string type):_type(type){
+	return ;
+}
 
-Weapon::Weapon(const Weapon &obj)
-{}
-
-Weapon& Weapon::operator=(const Weapon &obj)
-{}
-
-Weapon::~Weapon()
-{return ;}
+Weapon::~Weapon(){
+	return ;
+}
 
 //	MEMBER FUNCTIONS
 
-const std::string& Weapon::getType(){
-	std::string &ref = this->_type;
-	return (ref);
+std::string const& Weapon::getType(void)const{
+	// std::string &ref = this->_type;
+	//return (ref); -> obsolete?
+	return (this->_type);
 }
 
-void Weapon::setType(std::string type){
-	this->_type = type;
+void Weapon::setType(std::string newType){
+	this->_type = newType;
+	// std::cout << this->_type;
+	return ;
 }
