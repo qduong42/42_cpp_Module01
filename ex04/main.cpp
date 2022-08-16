@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 		infile.seekg(0, std::ios_base::beg);
 		char *temp = new char[length + 1];
 		infile.read(temp, length);
+		infile.close();
 		temp[length] = '\0';
 		std::string content = temp;
 		delete[] temp;
