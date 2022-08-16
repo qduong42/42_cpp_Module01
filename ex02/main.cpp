@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 00:20:44 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/15 00:27:55 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/15 00:30:22 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int main(void)
 {
 	std::string var = "Hi THIS IS BRAIN";
+	std::string &ref = var; // reference of string var
 	std::string *stringPTR;
 	stringPTR = &var;
-	std::string &ref = var;
 	std::cout << "Memory of var:" << &var << std::endl;
 	std::cout << "Memory of stringPTR:" << &stringPTR << std::endl;
 	std::cout << "Memory of stringREF:" << &ref << std::endl;

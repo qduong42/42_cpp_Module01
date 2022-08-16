@@ -1,6 +1,6 @@
 NAME := Moar_brainz
 
-CC := clang++
+CC := c++
 
 RM := rm -rf
 

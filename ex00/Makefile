@@ -1,6 +1,6 @@
 NAME :=  BraiiiiiiinnnzzzZ
 
-CC := clang++
+CC := c++
 
 RM := rm -rf
 

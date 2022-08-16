@@ -6,11 +6,11 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 00:41:55 by qduong            #+#    #+#              #
-#    Updated: 2022/08/16 11:57:39 by qduong           ###   ########.fr        #
+#    Updated: 2022/08/16 12:11:57 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := fight_club
+NAME := rep
 
 CC := c++
 
@@ -18,7 +18,7 @@ RM := rm -rf
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS := main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS := main.cpp
 
 OBJS:= $(SRCS:%.cpp=%.o)
 

@@ -1,6 +1,6 @@
 NAME := tis_bran
 
-CC := clang++
+CC := c++
 
 RM := rm -rf
 
