@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 00:41:55 by qduong            #+#    #+#              #
-#    Updated: 2022/08/16 22:34:25 by qduong           ###   ########.fr        #
+#    Updated: 2022/08/17 13:38:51 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,9 @@ $(NAME): $(OBJS)
 
 $(OBJS) : %.o: %.cpp
 	$(CC) -c $(CFLAGS) $< -o $@
+
+test :
+	./$(NAME)
 
 clean:
 	$(RM) $(OBJS)

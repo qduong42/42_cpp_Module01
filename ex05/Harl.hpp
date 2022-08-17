@@ -20,6 +20,6 @@ class Harl
 		const size_t count;
 };
 
-//typedef void (Harl::*HarlMemFn)(void);
+typedef void (Harl::*HarlMemFn)(void);
 
 #endif

@@ -14,13 +14,13 @@ void Harl::complain(std::string level)
 {
 	bool found = false;
 	std::string const commands[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*HarlMemFn[4])(void)= {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	HarlMemFn a[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	//if using typedef void(Harl::*f)(void) -> f[4];
 	for (size_t i = 0; i < count; i++)
 	{
 		if (level == commands[i])
 		{
-			(this->*HarlMemFn[i])();
+			(this->*a[i])();
 			found = true;
 		}
 	}
