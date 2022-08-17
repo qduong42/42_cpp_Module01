@@ -56,6 +56,3 @@
 * Binary vs text line 6 https://stackoverflow.com/questions/20863959/difference-between-opening-a-file-in-binary-vs-text
 * text mode = newline translations \n -> newline
 * Binary ok for text, but wont translate newline, mostly prob on windows (carriage return + newline)
-
-Donations: Totally unnecessary, I'm glad if I helped but if you feel ever so inclined to throw money at me, [here you go](https://ko-fi.com/qduong42)
-
