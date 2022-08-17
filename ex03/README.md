@@ -22,4 +22,4 @@ Note:
 - While Step 3 of HumanA and Step 5 of HumanB may look identical, the attributes are stored in Class HumanA and Class HumanB as reference and Pointer respectively.
 
 Donations:
-Totally unnecessary, I'm glad if I helped but if you feel ever so inclined to throw money at me, here you go: https://ko-fi.com/qduong42
+Totally unnecessary, I'm glad if I helped but if you feel ever so inclined to throw money at me, [here you go](https://ko-fi.com/qduong42)
