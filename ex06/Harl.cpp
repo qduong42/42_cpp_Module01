@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 13:42:42 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/17 14:33:15 by qduong           ###   ########.fr       */
+/*   Created: 2022/08/17 13:42:53 by qduong            #+#    #+#             */
+/*   Updated: 2022/08/17 14:56:40 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 //	CONSTRUCTORS | DESTRUCTOR
 
-Harl::Harl():_count(4){
+Harl::Harl():_count(4)
+{
+	return ;
+}
+
+Harl::~Harl()
+{
 	return ;
 }
 
@@ -24,23 +30,44 @@ Harl::Harl():_count(4){
 // 2 Arrays: Function array + string array with same index.
 void Harl::complain(std::string level)
 {
-	bool found = false;
 	std::string const commands[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	HarlMemFn a[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	//if using typedef void(Harl::*f)(void) -> f[4];
-	for (size_t i = 0; i < _count; i++)
+	size_t i = 0;
+	while (i < _count)
 	{
 		if (level == commands[i])
-		{
-			(this->*a[i])();
-			found = true;
-		}
+			break ;
+		i++;
 	}
-	if (found == false)
+	switch (i)
 	{
-		std::cout << "Enter a valid complaint level noob!" << std::endl;
+		case 0:
+			for (size_t y = i; y < this->_count; y++)
+				(this->*a[y])();
+			break ;
+		case 1:
+			for (size_t y = i; y < this->_count; y++)
+				(this->*a[y])();
+			break ;
+		case 2:
+			for (size_t y = i; y < this->_count; y++)
+				(this->*a[y])();
+			break ;			
+		case 3:
+			for (size_t y = i; y < this->_count; y++)
+				(this->*a[y])();
+			break ;
+		case 4:
+			for (size_t y = i; y < this->_count; y++)
+				(this->*a[y])();
+			break ;
+		default:
+		std::cout << "[Enter a valid complaint level noob!]" << std::endl;
+		break;
 	}
 }
+//Switch attribute: fallthrough?
 
 void Harl::debug(void)
 {
@@ -59,7 +86,7 @@ void Harl::info(void)
 void Harl::warning(void)
 {
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for"
-	<< "years whereas you started working here since last month." << std::endl;
+	<< " years whereas you started working here since last month." << std::endl;
 	return ;
 }
 
@@ -69,8 +96,6 @@ void Harl::error(void)
 	return ;
 }
 
-Harl::~Harl()
-{}
 
 //	MEMBER FUNCTIONS
 

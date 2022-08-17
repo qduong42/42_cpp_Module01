@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/17 13:43:36 by qduong            #+#    #+#              #
-#    Updated: 2022/08/17 13:43:37 by qduong           ###   ########.fr        #
+#    Created: 2022/08/15 00:41:55 by qduong            #+#    #+#              #
+#    Updated: 2022/08/17 14:48:30 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Moar_brainz
+NAME := harlfilter
 
 CC := c++
 
@@ -18,7 +18,7 @@ RM := rm -rf
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS := main.cpp Zombie.cpp zombieHorde.cpp
+SRCS := main.cpp Harl.cpp
 
 OBJS:= $(SRCS:%.cpp=%.o)
 
@@ -38,6 +38,16 @@ $(NAME): $(OBJS)
 
 $(OBJS) : %.o: %.cpp
 	$(CC) -c $(CFLAGS) $< -o $@
+
+test :
+	./$(NAME)
+	./$(NAME) "INFO"
+
+valgrind:
+	valgrind --leak-check=full  --show-leak-kinds=all ./$(NAME)
+
+leaks :
+	leaks --atExit -- ./$(NAME)
 
 clean:
 	$(RM) $(OBJS)

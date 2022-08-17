@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/15 00:00:50 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/17 17:02:57 by qduong           ###   ########.fr       */
+/*   Created: 2022/08/17 13:42:59 by qduong            #+#    #+#             */
+/*   Updated: 2022/08/17 14:33:15 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-Zombie::Zombie(){
-	std::cout << "Michael spawned!" << std::endl;
-	return ;
-}
+#include <iostream>
 
-Zombie::~Zombie(void){
-	std::cout << this->_name << " has been killed" << std::endl;
-	return ;
-}
+class Harl
+{
+	public:
 
-void	Zombie::announce(){
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-	return ;
-}
+		Harl();
+		~Harl();
 
-void Zombie::SetName(std::string name){
-	this->_name = name;
-	return ;
-}
+		void complain(std::string level);
+	private:
+
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+		const size_t _count;
+};
+
+typedef void (Harl::*HarlMemFn)(void);
+
+#endif
