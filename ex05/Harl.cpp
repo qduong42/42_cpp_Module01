@@ -2,8 +2,9 @@
 
 //	CONSTRUCTORS | DESTRUCTOR
 
-Harl::Harl()
-{}
+Harl::Harl():count(4){
+	return ;
+}
 
 //First Idea: 		void (Harl::*HarlMemFn)(void) = &Harl::level;
 // 					this->.*HarlMemFn();
@@ -11,12 +12,19 @@ Harl::Harl()
 // 2 Arrays: Function array + string array with same index.
 void Harl::complain(std::string level)
 {
-	if (level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR")
+	bool found = false;
+	std::string const commands[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*HarlMemFn[4])(void)= {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	//if using typedef void(Harl::*f)(void) -> f[4];
+	for (size_t i = 0; i < count; i++)
 	{
-		void (Harl::*HarlMemFn)(void) = &Harl::debug;
-		this->.*HarlMemFn();
+		if (level == commands[i])
+		{
+			(this->*HarlMemFn[i])();
+			found = true;
+		}
 	}
-	else 
+	if (found == false)
 	{
 		std::cout << "Enter a valid complaint level noob!" << std::endl;
 	}
@@ -24,22 +32,22 @@ void Harl::complain(std::string level)
 
 void Harl::debug(void)
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-
-	ketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-"
+			  << "special-ketchup burger. I really do!" << std::endl;
 	return ;
 }
 
 void Harl::info(void)
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put
-	enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put"
+			  << "enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 	return ;	
 }
 
 void Harl::warning(void)
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for
-	years whereas you started working here since last month." << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for"
+	<< "years whereas you started working here since last month." << std::endl;
 	return ;
 }
 

@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-
 class Harl
 {
 	public:
@@ -18,8 +17,9 @@ class Harl
 		void info(void);
 		void warning(void);
 		void error(void);
+		const size_t count;
 };
 
-typedef void (Harl::*HarlMemFn)(void);
+//typedef void (Harl::*HarlMemFn)(void);
 
 #endif
