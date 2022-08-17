@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:42:53 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/17 19:09:15 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/17 19:12:40 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void Harl::complain(std::string level)
 			(this->*a[i])();
 			break ;
 		default:
-		std::cout << "[Enter a valid complaint level noob!]" << std::endl;
+		std::cout << "[Enter a valid complaint level noob! Caps are important!]" << std::endl;
 		break;
 	}
 }
