@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:43:03 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/17 14:47:55 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/17 19:09:50 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main(int argc, char **argv)
 	}
 	Harl harl;
 	harl.complain(argv[1]);
-	std::cout << "DEBUG complaint DONE" << std::endl;
+	std::cout << "Harl complained once!" << std::endl;
 	return (0);
 }
