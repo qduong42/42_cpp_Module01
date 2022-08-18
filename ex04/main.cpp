@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:42:34 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/17 17:52:00 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/18 00:22:06 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,11 @@ int main(int argc, char **argv)
 		std::string content = temp;
 		delete[] temp;
 		size_t	pos;
+		if (search.length() > 0)
+		{
 		do
 		{
+			//check if s1 is empty-> infinite loop
 			pos = content.find(search);
 			if (pos != std::string::npos)
 			{
@@ -58,7 +61,8 @@ int main(int argc, char **argv)
 				content.insert(pos, replace);
 			}
 		} while (pos != std::string::npos);
-		outfile <<content;
+		}
+		outfile << content;
 		outfile.close();
 	}
 	else

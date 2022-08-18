@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/17 13:43:36 by qduong            #+#    #+#              #
-#    Updated: 2022/08/17 13:43:37 by qduong           ###   ########.fr        #
+#    Updated: 2022/08/17 22:24:36 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,12 @@ $(NAME): $(OBJS)
 
 $(OBJS) : %.o: %.cpp
 	$(CC) -c $(CFLAGS) $< -o $@
+
+valgrind:
+	valgrind --leak-check=full  --show-leak-kinds=all ./$(NAME)
+
+leaks :
+	leaks --atExit -- ./$(NAME)
 
 clean:
 	$(RM) $(OBJS)

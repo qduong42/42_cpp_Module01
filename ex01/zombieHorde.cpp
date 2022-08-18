@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 00:00:55 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/15 00:17:58 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/17 23:55:10 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,5 @@ Zombie* zombieHorde( int N, std::string name ){
 	}
 	return (zom);
 }
+
+// SetName and Announce should maybe be in int main instead of in the function itself.

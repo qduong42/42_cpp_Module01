@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 00:41:55 by qduong            #+#    #+#              #
-#    Updated: 2022/08/17 14:48:30 by qduong           ###   ########.fr        #
+#    Updated: 2022/08/17 22:24:26 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,6 @@ $(OBJS) : %.o: %.cpp
 test :
 	./$(NAME)
 	./$(NAME) "INFO"
-
-valgrind:
-	valgrind --leak-check=full  --show-leak-kinds=all ./$(NAME)
-
-leaks :
-	leaks --atExit -- ./$(NAME)
 
 clean:
 	$(RM) $(OBJS)

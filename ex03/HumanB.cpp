@@ -22,6 +22,6 @@ void HumanB::attack(void)const {
 	std::cout <<this->_name << " attacks with their "
 			  << "BARE HANDS" << std::endl;
 }
-void HumanB::setWeapon(Weapon &weapon){
-	this->_weapon = &weapon;
+void HumanB::setWeapon(Weapon *weapon){
+	this->_weapon = weapon;
 }
